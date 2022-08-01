@@ -1,4 +1,5 @@
 # This script will install the required packages
+# as specified on the EcoTyper GitHub page.
 
 if (!require("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
