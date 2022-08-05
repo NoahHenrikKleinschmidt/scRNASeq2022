@@ -4,7 +4,7 @@ The default settings are tailored toward two pre-set states
 "Carcinoma" and "Lymphoma" but we could define our own custom ones if we liked.
 
 ### Discovery / Recovery from bulk RNA-seq data
-1. Expression Matrix - A TSV of format
+1. Expression Matrix - A TSV of format, with TPM or CPM counts (anything that is normalized really...)
 
     | target | sample1 | sample2 | ... |
     | :----- | :------ | :------ | :-- |
@@ -51,3 +51,6 @@ The default settings are tailored toward two pre-set states
     - 'NK.cells'
     - 'PCs'
     - 'PMNs'
+  
+### Discovery from scRNA-Seq data
+ Uses again the same two formatted TSVs alongside with a configuration `yml` file.

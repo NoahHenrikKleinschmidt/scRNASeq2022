@@ -23,7 +23,13 @@ packages = c(
                 "viridis",
                 "argparse",
                 "colorspace",
-                "plyr"
+                "plyr",
+                "dplyr",
+                "stringr",
+                "data.table",
+                "matrixTests",
+                "ncdf4",
+                "HiClimR"
             )
 
 chooseCRANmirror( ind = 41 )
