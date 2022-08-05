@@ -1,0 +1,9 @@
+setup.py
+tpm_handler/__init__.py
+tpm_handler/core.py
+tpm_handler/main.py
+tpm_handler.egg-info/PKG-INFO
+tpm_handler.egg-info/SOURCES.txt
+tpm_handler.egg-info/dependency_links.txt
+tpm_handler.egg-info/entry_points.txt
+tpm_handler.egg-info/top_level.txt

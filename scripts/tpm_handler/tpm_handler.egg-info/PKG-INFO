@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: tpm-handler
+Version: 0.0.1
+Summary: A small script to convert raw counts to TPM.
+Home-page: https://github.com/NoahHenrikKleinschmidt/scRNASeq2022
+Author: Noah H. Kleinschmidt
+Author-email: noah.kleinschmidt@students.unibe.ch
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+A small script to convert raw counts to TPM.

@@ -1,0 +1,4 @@
+numpy==1.21.2
+pandas==1.3.5
+setuptools==58.0.4
+gtftools==0.9.0
