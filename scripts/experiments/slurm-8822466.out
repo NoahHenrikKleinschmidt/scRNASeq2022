@@ -1,0 +1,130 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+Running EcoTyper...
+The annotation file contains column 'Sample', and more than half of the cell types are present in the recovery dataset. Will perform ecotype recovery.
+Running cell state recovery on cell type: Endothelial.cells...
+Running cell state recovery on cell type: NK.cells...
+Running cell state recovery on cell type: Monocytes.and.Macrophages...
+Running cell state recovery on cell type: CD8.T.cells...
+Running cell state recovery on cell type: Epithelial.cells...
+Running cell state recovery on cell type: Dendritic.cells...
+Running cell state recovery on cell type: PCs...
+Running cell state recovery on cell type: CD4.T.cells...
+Fehler in NMF:::std.divergence.update.h(v, w, h, nbterms = nb, ncterms = nc,  : 
+  REAL() can only be applied to a 'numeric', not a 'logical'
+Ruft auf: NMFpredict ... .local -> run -> run -> .local -> updateFun -> <Anonymous>
+Zusätzlich: Warnmeldungen:
+1: In max(target, na.rm = TRUE) :
+  kein nicht-fehlendes Argument für max; gebe -Inf zurück
+2: In min(x, na.rm = TRUE) :
+  kein nicht-fehlendes Argument für min; gebe Inf zurück
+3: In min(rowSums(x, na.rm = TRUE), na.rm = TRUE) :
+  kein nicht-fehlendes Argument für min; gebe Inf zurück
+Zeitnahme beendet um: 0.026 0.001 0.027
+Ausführung angehalten
+Fehler in NMF:::std.divergence.update.h(v, w, h, nbterms = nb, ncterms = nc,  : 
+  REAL() can only be applied to a 'numeric', not a 'logical'
+Ruft auf: NMFpredict ... .local -> run -> run -> .local -> updateFun -> <Anonymous>
+Zusätzlich: Warnmeldungen:
+1: In max(target, na.rm = TRUE) :
+  kein nicht-fehlendes Argument für max; gebe -Inf zurück
+2: In min(x, na.rm = TRUE) :
+  kein nicht-fehlendes Argument für min; gebe Inf zurück
+3: In min(rowSums(x, na.rm = TRUE), na.rm = TRUE) :
+  kein nicht-fehlendes Argument für min; gebe Inf zurück
+Zeitnahme beendet um: 0.031 0 0.032
+Ausführung angehalten
+Fehler in NMF:::std.divergence.update.h(v, w, h, nbterms = nb, ncterms = nc,  : 
+  REAL() can only be applied to a 'numeric', not a 'logical'
+Ruft auf: NMFpredict ... .local -> run -> run -> .local -> updateFun -> <Anonymous>
+Zusätzlich: Warnmeldungen:
+1: In max(target, na.rm = TRUE) :
+  kein nicht-fehlendes Argument für max; gebe -Inf zurück
+2: In min(x, na.rm = TRUE) :
+  kein nicht-fehlendes Argument für min; gebe Inf zurück
+3: In min(rowSums(x, na.rm = TRUE), na.rm = TRUE) :
+  kein nicht-fehlendes Argument für min; gebe Inf zurück
+Zeitnahme beendet um: 0.026 0 0.026
+Ausführung angehalten
+Fehler in NMF:::std.divergence.update.h(v, w, h, nbterms = nb, ncterms = nc,  : 
+  REAL() can only be applied to a 'numeric', not a 'logical'
+Ruft auf: NMFpredict ... .local -> run -> run -> .local -> updateFun -> <Anonymous>
+Zusätzlich: Warnmeldungen:
+1: In max(target, na.rm = TRUE) :
+  kein nicht-fehlendes Argument für max; gebe -Inf zurück
+2: In min(x, na.rm = TRUE) :
+  kein nicht-fehlendes Argument für min; gebe Inf zurück
+3: In min(rowSums(x, na.rm = TRUE), na.rm = TRUE) :
+  kein nicht-fehlendes Argument für min; gebe Inf zurück
+Zeitnahme beendet um: 0.026 0 0.028
+Ausführung angehalten
+Fehler in NMF:::std.divergence.update.h(v, w, h, nbterms = nb, ncterms = nc,  : 
+  REAL() can only be applied to a 'numeric', not a 'logical'
+Ruft auf: NMFpredict ... .local -> run -> run -> .local -> updateFun -> <Anonymous>
+Zusätzlich: Warnmeldungen:
+1: In max(target, na.rm = TRUE) :
+  kein nicht-fehlendes Argument für max; gebe -Inf zurück
+2: In min(x, na.rm = TRUE) :
+  kein nicht-fehlendes Argument für min; gebe Inf zurück
+3: In min(rowSums(x, na.rm = TRUE), na.rm = TRUE) :
+  kein nicht-fehlendes Argument für min; gebe Inf zurück
+Zeitnahme beendet um: 0.026 0 0.027
+Ausführung angehalten
+Fehler in NMF:::std.divergence.update.h(v, w, h, nbterms = nb, ncterms = nc,  : 
+  REAL() can only be applied to a 'numeric', not a 'logical'
+Ruft auf: NMFpredict ... .local -> run -> run -> .local -> updateFun -> <Anonymous>
+Zusätzlich: Warnmeldungen:
+1: In max(target, na.rm = TRUE) :
+  kein nicht-fehlendes Argument für max; gebe -Inf zurück
+2: In min(x, na.rm = TRUE) :
+  kein nicht-fehlendes Argument für min; gebe Inf zurück
+3: In min(rowSums(x, na.rm = TRUE), na.rm = TRUE) :
+  kein nicht-fehlendes Argument für min; gebe Inf zurück
+Zeitnahme beendet um: 0.024 0.001 0.026
+Ausführung angehalten
+Warnmeldung:
+More than 2500 cells are available for cell type 'Epithelial.cells'. State recovery might take a long time. We recommend using the option -s to downsample the data... 
+Fehler in NMF:::std.divergence.update.h(v, w, h, nbterms = nb, ncterms = nc,  : 
+  REAL() can only be applied to a 'numeric', not a 'logical'
+Ruft auf: NMFpredict ... .local -> run -> run -> .local -> updateFun -> <Anonymous>
+Zusätzlich: Warnmeldungen:
+1: In max(target, na.rm = TRUE) :
+  kein nicht-fehlendes Argument für max; gebe -Inf zurück
+2: In min(x, na.rm = TRUE) :
+  kein nicht-fehlendes Argument für min; gebe Inf zurück
+3: In min(rowSums(x, na.rm = TRUE), na.rm = TRUE) :
+  kein nicht-fehlendes Argument für min; gebe Inf zurück
+Zeitnahme beendet um: 0.032 0.001 0.034
+Ausführung angehalten
+Fehler in NMF:::std.divergence.update.h(v, w, h, nbterms = nb, ncterms = nc,  : 
+  REAL() can only be applied to a 'numeric', not a 'logical'
+Ruft auf: NMFpredict ... .local -> run -> run -> .local -> updateFun -> <Anonymous>
+Zusätzlich: Warnmeldungen:
+1: In max(target, na.rm = TRUE) :
+  kein nicht-fehlendes Argument für max; gebe -Inf zurück
+2: In min(x, na.rm = TRUE) :
+  kein nicht-fehlendes Argument für min; gebe Inf zurück
+3: In min(rowSums(x, na.rm = TRUE), na.rm = TRUE) :
+  kein nicht-fehlendes Argument für min; gebe Inf zurück
+Zeitnahme beendet um: 0.034 0.001 0.035
+Ausführung angehalten
+Fehler in RunJobQueue() : 
+  EcoTyper failed. Please check the error message above!
+Ausführung angehalten

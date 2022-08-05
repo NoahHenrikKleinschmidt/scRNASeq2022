@@ -1,0 +1,1 @@
+This directory stores bash scripts to perform different experiments. 

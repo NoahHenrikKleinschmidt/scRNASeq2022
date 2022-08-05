@@ -1,0 +1,102 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+Running EcoTyper...
+
+Step 1 (extract cell type specific genes)...
+[1] ""
+[1] "alpha_beta.t.cell"
+[1] "central.venous.hepatic.sinusoidal.endothelial.cell"
+[1] "cholangiocyte"
+[1] "erythroid.lineage.cell"
+[1] "gamma_delta.t.cell"
+[1] "hepatic.stellate.cell"
+[1] "hepatocyte"
+[1] "inflammatory.macrophage"
+[1] "kupffer.cell"
+[1] "mature.b.cell"
+[1] "natural.killer_like.cell"
+[1] "periportal.hepatic.sinusoidal.endothelial.cell"
+[1] "plasma.cell"
+[1] "portal.endothelial.cell"
+Warnmeldung:
+Warnmeldung:
+Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+Warnmeldung:
+Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+Warnmeldung:
+Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+Warnmeldung:
+Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+Warnmeldung:
+Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+Warnmeldung:
+Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+Warnmeldung:
+Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+Warnmeldung:
+Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+Warnmeldung:
+Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+Warnmeldung:
+Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+Warnmeldung:
+Warnmeldung:
+Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+Warnmeldung:
+Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+Warnmeldung:
+Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+Warnmeldungen:
+1: In stats::pwilcox(stat[inds], nx[inds], ny[inds]) : NaNs wurden erzeugt
+2: row_wilcoxon_twosample: 19077 of the rows had less than 1 remaining finite "x" observation.
+First occurrence at row 1 
+3: row_wilcoxon_twosample: 19077 of the rows had less than 1 remaining finite "y" observation.
+First occurrence at row 1 
+Warnmeldung:
+row_wilcoxon_twosample: 19077 of the rows had less than 1 remaining finite "x" observation.
+First occurrence at row 1 
+Step 1 (extract cell type specific genes) finished successfully!
+
+Step 2 (cell state discovery on correrlation matrices): Calculating correlation matrices...
+Warnmeldung:
+There are more than 2500 single cells available for cell type 'hepatocyte'. Subsampling to 2500 cells.
+ 
+Fehler: Only 0 single cells are available for cell type: TRUE. At least 50 are required. Skipping this cell type!
+Ausführung angehalten
+Fehler: Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type!
+Ausführung angehalten
+Filtering 'erythroid.lineage.cell' profiles for cell type specific genes...
+Filtering 'mature.b.cell' profiles for cell type specific genes...
+Filtering 'cholangiocyte' profiles for cell type specific genes...
+Filtering 'portal.endothelial.cell' profiles for cell type specific genes...
+Filtering 'central.venous.hepatic.sinusoidal.endothelial.cell' profiles for cell type specific genes...
+Filtering 'periportal.hepatic.sinusoidal.endothelial.cell' profiles for cell type specific genes...
+Filtering 'kupffer.cell' profiles for cell type specific genes...
+Filtering 'natural.killer_like.cell' profiles for cell type specific genes...
+Filtering 'plasma.cell' profiles for cell type specific genes...
+Filtering 'gamma_delta.t.cell' profiles for cell type specific genes...
+Filtering 'inflammatory.macrophage' profiles for cell type specific genes...
+Filtering 'alpha_beta.t.cell' profiles for cell type specific genes...
+Filtering 'hepatocyte' profiles for cell type specific genes...
+Fehler in RunJobQueue() : 
+  EcoTyper failed. Please check the error message above!
+Ausführung angehalten
