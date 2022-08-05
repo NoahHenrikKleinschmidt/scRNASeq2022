@@ -1,0 +1,10 @@
+setup.py
+mtx_to_tsv/__init__.py
+mtx_to_tsv/core.py
+mtx_to_tsv/main.py
+mtx_to_tsv/mtx_to_tsv.R
+mtx_to_tsv.egg-info/PKG-INFO
+mtx_to_tsv.egg-info/SOURCES.txt
+mtx_to_tsv.egg-info/dependency_links.txt
+mtx_to_tsv.egg-info/entry_points.txt
+mtx_to_tsv.egg-info/top_level.txt

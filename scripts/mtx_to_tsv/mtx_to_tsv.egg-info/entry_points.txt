@@ -1,0 +1,2 @@
+[console_scripts]
+mtx_to_tsv = mtx_to_tsv.main:main
