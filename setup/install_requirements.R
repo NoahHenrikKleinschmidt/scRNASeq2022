@@ -11,6 +11,11 @@ BiocManager::install("Biobase")
 options( install.packages.check.source = "no" )
 
 packages = c(
+
+                # these are for working with the provided rds data
+                "Seurat",
+
+                # all of these are for EcoTyper
                 "config",
                 "ggplot2",
                 "NMF",

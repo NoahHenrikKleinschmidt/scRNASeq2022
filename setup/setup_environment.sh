@@ -21,6 +21,10 @@ conda activate ${name}
 # install netcdf4 because they are needed by some of the R packages
 conda install -c conda-forge netcdf4 
 
+# for working with seurat
+conda install -c conda-forge r-rgeos 
+
+
 # now install the necessary packages
 Rscript install_requirements.R
 
