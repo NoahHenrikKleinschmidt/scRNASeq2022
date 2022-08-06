@@ -1,0 +1,236 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+Running EcoTyper...
+Warning message:
+In fread(input_mat, sep = "\t", nrows = 5) :
+  Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+
+Step 1 (extract cell type specific genes)...
+[1] ""
+[1] "alpha_beta.t.cell"
+[1] "central.venous.hepatic.sinusoidal.endothelial.cell"
+[1] "cholangiocyte"
+[1] "erythroid.lineage.cell"
+[1] "gamma_delta.t.cell"
+[1] "hepatic.stellate.cell"
+[1] "hepatocyte"
+[1] "inflammatory.macrophage"
+[1] "kupffer.cell"
+[1] "mature.b.cell"
+[1] "natural.killer_like.cell"
+[1] "periportal.hepatic.sinusoidal.endothelial.cell"
+[1] "plasma.cell"
+[1] "portal.endothelial.cell"
+INFO [2022-08-06 17:29:42] Preparing output_dir: ../EcoTyper/mylivercells/Cell_type_specific_genes/Analysis/Cell_type_specific_genes
+INFO [2022-08-06 17:29:42] Preparing output_dir: ../EcoTyper/mylivercells/Cell_type_specific_genes/Analysis/Cell_type_specific_genes
+INFO [2022-08-06 17:29:42] Preparing output_dir: ../EcoTyper/mylivercells/Cell_type_specific_genes/Analysis/Cell_type_specific_genesINFO [2022-08-06 17:29:42] Preparing output_dir: ../EcoTyper/mylivercells/Cell_type_specific_genes/Analysis/Cell_type_specific_genes
+
+INFO [2022-08-06 17:29:42] Preparing output_dir: ../EcoTyper/mylivercells/Cell_type_specific_genes/Analysis/Cell_type_specific_genes
+INFO [2022-08-06 17:29:42] Preparing output_dir: ../EcoTyper/mylivercells/Cell_type_specific_genes/Analysis/Cell_type_specific_genes
+INFO [2022-08-06 17:29:42] Preparing output_dir: ../EcoTyper/mylivercells/Cell_type_specific_genes/Analysis/Cell_type_specific_genes
+INFO [2022-08-06 17:29:42] Preparing output_dir: ../EcoTyper/mylivercells/Cell_type_specific_genes/Analysis/Cell_type_specific_genes
+INFO [2022-08-06 17:29:42] Preparing output_dir: ../EcoTyper/mylivercells/Cell_type_specific_genes/Analysis/Cell_type_specific_genesINFO [2022-08-06 17:29:42] Preparing output_dir: ../EcoTyper/mylivercells/Cell_type_specific_genes/Analysis/Cell_type_specific_genes
+
+INFO [2022-08-06 17:29:42] Preparing output_dir: ../EcoTyper/mylivercells/Cell_type_specific_genes/Analysis/Cell_type_specific_genes
+INFO [2022-08-06 17:29:42] Preparing output_dir: ../EcoTyper/mylivercells/Cell_type_specific_genes/Analysis/Cell_type_specific_genes
+INFO [2022-08-06 17:29:42] Preparing output_dir: ../EcoTyper/mylivercells/Cell_type_specific_genes/Analysis/Cell_type_specific_genes
+INFO [2022-08-06 17:29:42] Preparing output_dir: ../EcoTyper/mylivercells/Cell_type_specific_genes/Analysis/Cell_type_specific_genes
+INFO [2022-08-06 17:29:42] Preparing output_dir: ../EcoTyper/mylivercells/Cell_type_specific_genes/Analysis/Cell_type_specific_genes
+Warning message:
+In fread(file.path(input_dir, paste0("data.txt")), data.table = F) :
+  Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+Warning message:
+In fread(file.path(input_dir, paste0("data.txt")), data.table = F) :
+  Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+Warning message:
+Warning message:
+Warning message:
+In fread(file.path(input_dir, paste0("data.txt")), data.table = F) :In fread(file.path(input_dir, paste0("data.txt")), data.table = F) :In fread(file.path(input_dir, paste0("data.txt")), data.table = F) :
+  Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+
+  Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+
+  Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+Warning message:
+In fread(file.path(input_dir, paste0("data.txt")), data.table = F) :
+  Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+Warning message:
+In fread(file.path(input_dir, paste0("data.txt")), data.table = F) :
+  Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+Warning message:
+In fread(file.path(input_dir, paste0("data.txt")), data.table = F) :
+  Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+Warning message:
+In fread(file.path(input_dir, paste0("data.txt")), data.table = F) :
+  Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+Warning message:
+In fread(file.path(input_dir, paste0("data.txt")), data.table = F) :
+  Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+Warning message:
+In fread(file.path(input_dir, paste0("data.txt")), data.table = F) :
+  Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+Warning message:
+In fread(file.path(input_dir, paste0("data.txt")), data.table = F) :
+  Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+Warning message:
+Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+Warning message:
+Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+Warning message:
+Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+Warning message:
+Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+Warning message:
+Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+Warning message:
+In fread(file.path(input_dir, paste0("data.txt")), data.table = F) :Warning message:
+
+ Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+ Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+Warning message:
+Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+Warning message:
+Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+Warning message:
+Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+Warning message:
+In fread(file.path(input_dir, paste0("data.txt")), data.table = F) :Warning message:
+
+ Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+ Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+Warning message:
+Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+Warning message:
+In fread(file.path(input_dir, paste0("data.txt")), data.table = F) :
+  Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+Warning message:
+Warning message:
+Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+Warning message:
+Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+Warning message:
+Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type from the EcoTyper analysis! 
+Warning messages:
+1: In stats::pwilcox(stat[inds], nx[inds], ny[inds]) : NaNs produced
+2: row_wilcoxon_twosample: 19077 of the rows had less than 1 remaining finite "x" observation.
+First occurrence at row 1 
+3: row_wilcoxon_twosample: 19077 of the rows had less than 1 remaining finite "y" observation.
+First occurrence at row 1 
+Warning message:
+row_wilcoxon_twosample: 19077 of the rows had less than 1 remaining finite "x" observation.
+First occurrence at row 1 
+Step 1 (extract cell type specific genes) finished successfully!
+
+Step 2 (cell state discovery on correrlation matrices): Calculating correlation matrices...
+INFO [2022-08-06 17:32:29] Step 2 (cell state discovery on correrlation matrices): Calculating correlation matrices...
+INFO [2022-08-06 17:32:30] filter_genes = 
+[1] TRUE
+INFO [2022-08-06 17:32:30] filter_genes = 
+[1] TRUE
+INFO [2022-08-06 17:32:30] filter_genes = 
+[1] TRUE
+INFO [2022-08-06 17:32:30] filter_genes = 
+[1] TRUE
+INFO [2022-08-06 17:32:30] filter_genes = 
+[1] TRUE
+INFO [2022-08-06 17:32:30] filter_genes = 
+[1] TRUE
+INFO [2022-08-06 17:32:30] filter_genes = 
+[1] TRUE
+INFO [2022-08-06 17:32:30] filter_genes = 
+[1] TRUE
+INFO [2022-08-06 17:32:30] filter_genes = 
+[1] TRUE
+INFO [2022-08-06 17:32:30] filter_genes = 
+[1] TRUE
+INFO [2022-08-06 17:32:30] filter_genes = 
+[1] TRUE
+INFO [2022-08-06 17:32:30] filter_genes = 
+[1] TRUE
+INFO [2022-08-06 17:32:30] filter_genes = 
+[1] TRUE
+INFO [2022-08-06 17:32:30] filter_genes = 
+[1] TRUE
+INFO [2022-08-06 17:32:30] filter_genes = 
+[1] TRUE
+INFO [2022-08-06 17:32:30] Running jobs...
+Warning message:
+There are more than 2500 single cells available for cell type 'hepatocyte'. Subsampling to 2500 cells.
+ 
+Error: Only 0 single cells are available for cell type: TRUE. At least 50 are required. Skipping this cell type!
+Execution halted
+Error: Only 36 single cells are available for cell type: hepatic.stellate.cell. At least 50 are required. Skipping this cell type!
+Execution halted
+Warning message:
+In fread(file.path(dataset_dir, paste0("data.txt")), data.table = F) :
+  Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+Warning message:
+In fread(file.path(dataset_dir, paste0("data.txt")), data.table = F) :
+  Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+Warning message:
+In fread(file.path(dataset_dir, paste0("data.txt")), data.table = F) :
+  Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+Warning message:
+In fread(file.path(dataset_dir, paste0("data.txt")), data.table = F) :
+  Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+Warning message:
+In fread(file.path(dataset_dir, paste0("data.txt")), data.table = F) :
+  Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+Warning message:
+In fread(file.path(dataset_dir, paste0("data.txt")), data.table = F) :
+  Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+Warning message:
+In fread(file.path(dataset_dir, paste0("data.txt")), data.table = F) :
+  Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+Warning message:
+In fread(file.path(dataset_dir, paste0("data.txt")), data.table = F) :
+  Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+Warning message:
+In fread(file.path(dataset_dir, paste0("data.txt")), data.table = F) :
+  Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+Warning message:
+In fread(file.path(dataset_dir, paste0("data.txt")), data.table = F) :
+  Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+Warning message:
+In fread(file.path(dataset_dir, paste0("data.txt")), data.table = F) :
+  Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+Warning message:
+In fread(file.path(dataset_dir, paste0("data.txt")), data.table = F) :
+  Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+Warning message:
+In fread(file.path(dataset_dir, paste0("data.txt")), data.table = F) :
+  Detected 11265 column names but the data has 11266 columns (i.e. invalid file). Added 1 extra default column name for the first column which is guessed to be row names or an index. Use setnames() afterwards if this guess is not correct, or fix the file write command that created the file to create a valid file.
+Filtering 'erythroid.lineage.cell' profiles for cell type specific genes...
+Filtering 'cholangiocyte' profiles for cell type specific genes...
+Filtering 'mature.b.cell' profiles for cell type specific genes...
+Filtering 'portal.endothelial.cell' profiles for cell type specific genes...
+Filtering 'central.venous.hepatic.sinusoidal.endothelial.cell' profiles for cell type specific genes...
+Filtering 'periportal.hepatic.sinusoidal.endothelial.cell' profiles for cell type specific genes...
+Filtering 'kupffer.cell' profiles for cell type specific genes...
+Filtering 'natural.killer_like.cell' profiles for cell type specific genes...
+Filtering 'plasma.cell' profiles for cell type specific genes...
+Filtering 'gamma_delta.t.cell' profiles for cell type specific genes...
+Filtering 'inflammatory.macrophage' profiles for cell type specific genes...
+Filtering 'alpha_beta.t.cell' profiles for cell type specific genes...
+Filtering 'hepatocyte' profiles for cell type specific genes...
+Error in RunJobQueue() : 
+  EcoTyper failed. Please check the error message above!
+Execution halted

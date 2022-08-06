@@ -21,6 +21,7 @@ def setup_cli():
     length_measure.add_argument( "-o", "--output", help = "The output file.", default = None )
     length_measure.add_argument( "-m", "--mode", help = "The mode of the computation. The default is 'l'.", default = "l" )
     length_measure.add_argument( "-n", "--add_names", help = "Also add a column with gene names (will be 2nd column)", action = "store_true" )
+    length_measure.add_argument( "-s", "--swap_names", help = "Swap the gene names with gene ids. This will move the gene names to the 1st column and gene ids to the 2nd column.", action = "store_true", default = False )
 
     convert_tpm = cmd_parser.add_parser( "normalise", help = "Convert counts to TPM." )
     convert_tpm.add_argument( "file", help = "The input count table in TSV format." )
@@ -44,7 +45,7 @@ def main():
             outfile = args.output
         core.call_gtftools( args.file, outfile, mode = args.mode )
         if args.add_names:
-            core.add_gtf_gene_names( args.file, outfile )
+            core.add_gtf_gene_names( args.file, outfile, args.swap_names )
 
     elif args.command == "normalise":
         table = core.Table( args.file )

@@ -3,7 +3,6 @@ Defines core functions for converting raw counts to TPM.
 """
 
 import subprocess
-from tkinter import E
 import pandas as pd
 import numpy as np
 import re
@@ -34,7 +33,7 @@ def call_gtftools( filename : str, output : str,  mode : str = "l" ):
     subprocess.call( cmd, shell = True )
 
 
-def add_gtf_gene_names( filename : str, outfile : str ):
+def add_gtf_gene_names( filename : str, outfile : str, swap_ids_and_names : bool = False ):
     """
     Adds the gene names to the GTF file.
 
@@ -44,9 +43,13 @@ def add_gtf_gene_names( filename : str, outfile : str ):
         The input GTF file.
     outfile : str
         The output file.
+    swap_ids_and_names : bool, optional
+        Whether to swap the IDs and names. The default is False.
+        If True then the Ids (1st column) and names (2nd column by default)
+        will be swapped so that names are the 1st column and IDs are the 2nd column.
     """
     orig = pd.read_csv( filename, sep = "\t", header = None, comment = "#", names = ["chr", "source", "type", "start", "end", "score", "strand", "phase", "attributes"] )
-    dest = pd.read_csv( outfile, sep = "\t", header = None )
+    dest = pd.read_csv( outfile, sep = "\t" )
 
     # now extract the gene names using regex and add as a data column...
     pattern = re.compile( 'gene_name "([A-Za-z0-9-.]+)"' )
@@ -66,11 +69,12 @@ def add_gtf_gene_names( filename : str, outfile : str ):
     # will by default use the last column so that should be one of the length 
     # columns not the gene_names...
     cols = dest.columns.tolist()
-    cols.insert( 1, "gene_name" )
+    idx = 0 if swap_ids_and_names else 1
+    cols.insert( idx, "gene_name" )
     del cols[-1]
     dest = dest[ cols ]
 
-    dest.to_csv( outfile, sep = "\t", header = False, index = False )
+    dest.to_csv( outfile, sep = "\t", index = False )
     
 
 def _match_regex_pattern( pattern : str, df : pd.DataFrame ):
@@ -301,6 +305,7 @@ class Table(object):
             The output file.
         use_names : bool
             Save the file with gene_names instead of gene_ids in the first column.
+        
         """
         logger.info( "Saving to file..." )
         if use_names:

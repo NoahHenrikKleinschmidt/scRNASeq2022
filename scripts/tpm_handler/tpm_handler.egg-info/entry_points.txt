@@ -1,2 +1,3 @@
 [console_scripts]
 tpm_handler = tpm_handler.main:main
+

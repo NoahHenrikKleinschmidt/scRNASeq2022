@@ -34,7 +34,7 @@ def call_gtftools( filename : str, output : str,  mode : str = "l" ):
     subprocess.call( cmd, shell = True )
 
 
-def add_gtf_gene_names( filename : str, outfile : str ):
+def add_gtf_gene_names( filename : str, outfile : str, swap_ids_and_names : bool = False ):
     """
     Adds the gene names to the GTF file.
 
@@ -44,9 +44,13 @@ def add_gtf_gene_names( filename : str, outfile : str ):
         The input GTF file.
     outfile : str
         The output file.
+    swap_ids_and_names : bool, optional
+        Whether to swap the IDs and names. The default is False.
+        If True then the Ids (1st column) and names (2nd column by default)
+        will be swapped so that names are the 1st column and IDs are the 2nd column.
     """
     orig = pd.read_csv( filename, sep = "\t", header = None, comment = "#", names = ["chr", "source", "type", "start", "end", "score", "strand", "phase", "attributes"] )
-    dest = pd.read_csv( outfile, sep = "\t", header = None )
+    dest = pd.read_csv( outfile, sep = "\t" )
 
     # now extract the gene names using regex and add as a data column...
     pattern = re.compile( 'gene_name "([A-Za-z0-9-.]+)"' )
@@ -66,11 +70,12 @@ def add_gtf_gene_names( filename : str, outfile : str ):
     # will by default use the last column so that should be one of the length 
     # columns not the gene_names...
     cols = dest.columns.tolist()
-    cols.insert( 1, "gene_name" )
+    idx = 0 if swap_ids_and_names else 1
+    cols.insert( idx, "gene_name" )
     del cols[-1]
     dest = dest[ cols ]
 
-    dest.to_csv( outfile, sep = "\t", header = False, index = False )
+    dest.to_csv( outfile, sep = "\t", index = False )
     
 
 def _match_regex_pattern( pattern : str, df : pd.DataFrame ):
@@ -191,7 +196,6 @@ class Table(object):
         # convert to TPM
         tpm = array_to_tpm( self.counts, self.lengths )
 
-
         # now round to the given number of digits
         logger.info( "Rounding values..." )
         tpm = np.round( tpm, decimals = digits )
@@ -306,7 +310,7 @@ class Table(object):
         logger.info( "Saving to file..." )
         if use_names:
             self._df[ self._df.columns[0] ] = self.names
-        self._df.to_csv( filename, sep = "\t", index = False )
+        self._df.to_csv( filename, sep = "\t", index = False, engine = "c" )
         logger.info( f"Saved to file: {filename}" )
         return self
 

@@ -2,11 +2,10 @@
 
 #SBATCH --job-name="EcoTyp-scRNA-discovery"
 #SBATCH --nodes=1
-#SBATCH --cpus-per-task=20
-#SBATCH --mem=200G
-#SBATCH --time=50:00:00
+#SBATCH --cpus-per-task=10
+#SBATCH --mem=50G
+#SBATCH --time=01:00:00
 
-# NOTE: It really requires A LOOOOT of memory! They state 50+ but at 100 I get a memory error. Now let's check at 200...
 
 # This script performs EcoTyper Ecotype Recovery on the scRNA-seq dataset (from EBI) using the default Carcinoma setting
 # in order to do this we had to alter the celltype annotations to match known celltypes within "Carcinoma". The altered labels
@@ -25,8 +24,8 @@ cd $ecotyper
 # the data contains a normalised counts matrix in MatrixArchive format which we have to convert from .mtx to a regular tsv file
 # the data was normalised to CPM using scanpy (scanpy is really cool...)
 
-filename="${data}/resources/scExpressionAtlass/E-HCAD-9/E-HCAD-9.aggregated_filtered_normalised_counts"
-file="${filename}.tsv"
+filename="${data}/resources/scExpressionAtlass/E-HCAD-9/E-HCAD-9.aggregated_filtered_normalised_counts_geneNames"
+file="${filename}.tsv" # this is the file we will use for the analysis
 
 # if we need to convert the file to TSV then do so
 if [ ! -f "${file}" ]; then
@@ -42,7 +41,7 @@ echo "Running EcoTyper..."
 
 preset="Carcinoma"
 annotations="${data}/resources/scExpressionAtlass/E-HCAD-9/E-HCAD-9.annotation_defaultCarcinoma.tsv"
-threads=20
+threads=10
 out="${parent}/results/defaultCarcinoma"
 
 Rscript $ecotyper/EcoTyper_recovery_scRNA.R -d $preset -m $file -a $annotations -t $threads -o $out
