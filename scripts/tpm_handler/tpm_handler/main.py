@@ -27,7 +27,7 @@ def setup_cli():
     convert_tpm.add_argument( "file", help = "The input count table in TSV format." )
     convert_tpm.add_argument( "-o", "--output", help = "The output file.", default = None )
     convert_tpm.add_argument( "-l", "--lengths", help = "The file containing the lengths of the features." )
-    convert_tpm.add_argument( "-r", "--round", type = int, help = "The number of decimals to round the TPM values to.", default = 0 )
+    convert_tpm.add_argument( "-r", "--round", type = int, help = "The number of decimals to round the TPM values to.", default = 5 )
     convert_tpm.add_argument( "-n", "--use_names", help = "Store the gene_names instead of gene_ids in the first column (only works if gene_names are in the lengths file). Note: this does not affect the name of the first column, only its contents!", action = "store_true" )
     return parser
 
