@@ -206,6 +206,13 @@ class Table(object):
         self._lengths = None
         self._raw_counts = None
         self._full_counts = None
+        self._memorize = False
+
+    def memorize( self ):
+        """
+        Store the original (pre-filtered) and raw (unnormalised) counts.
+        """
+        self._memorize = True
 
     def normalise( self, digits : int = 5 ):
         """
@@ -220,7 +227,8 @@ class Table(object):
             raise ValueError( "The table does not have lengths." )
 
         # store the raw counts
-        self._raw_counts = self._counts.copy()
+        if self._memorize:
+            self._raw_counts = self._counts.copy()
         
         # convert to TPM
         self.tpm = array_to_tpm( self.counts, self.lengths )
@@ -277,7 +285,8 @@ class Table(object):
         """
         
         # store the original data
-        self._full_counts = self._counts.copy()
+        if self._memorize:
+            self._full_counts = self._counts.copy()
 
         # get only the relevant subset of lengths for the actually present features
         if id_col is None:
