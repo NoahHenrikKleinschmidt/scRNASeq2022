@@ -1,0 +1,3 @@
+[console_scripts]
+fix_annotations = fix_annotations.main:main
+

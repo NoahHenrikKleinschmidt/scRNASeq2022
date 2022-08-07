@@ -1,0 +1,9 @@
+setup.py
+fix_annotations/__init__.py
+fix_annotations/core.py
+fix_annotations/main.py
+fix_annotations.egg-info/PKG-INFO
+fix_annotations.egg-info/SOURCES.txt
+fix_annotations.egg-info/dependency_links.txt
+fix_annotations.egg-info/entry_points.txt
+fix_annotations.egg-info/top_level.txt
