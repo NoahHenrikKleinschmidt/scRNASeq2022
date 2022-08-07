@@ -22,21 +22,22 @@ if __name__ == '__main__':
     
     with alive_bar( reps * 2 ) as bar:
         
+        bar.title = "Measuring performance (tpm_handler)"
+        # test tpm_handler
+        for i,_ in enumerate(times_tpm_handler):
+            start = time.time()
+            subprocess.run( f"tpm_handler normalise -r 5 -l {lengths} {file}", shell = True )
+            times_tpm_handler[i] = time.time() - start
+            bar()
+
         bar.title = "Measuring performance (R)"
-        # start by the Rscript
+        # test the Rscript
         for i,_ in enumerate(times_R):
             start = time.time()
             subprocess.run( "Rscript ref.R", shell = True )
             times_R[i] = time.time() - start
             bar()
         
-        bar.title = "Measuring performance (tpm_handler)"
-        # now the same for tpm_handler
-        for i,_ in enumerate(times_tpm_handler):
-            start = time.time()
-            subprocess.run( f"tpm_handler normalise -r 5 -l {lengths} {file}", shell = True )
-            times_tpm_handler[i] = time.time() - start
-            bar()
 
     # plot the results
     times = pd.DataFrame( 
