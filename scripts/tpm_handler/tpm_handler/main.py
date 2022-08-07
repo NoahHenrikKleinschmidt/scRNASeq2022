@@ -51,7 +51,7 @@ def main():
         table = core.Table( args.file )
         table.set_lengths( args.lengths )
         table.normalise( args.round )
-        outfile = args.output if args.output is not None else f"{ args.file.split('.')[0] }.tpm"
+        outfile = args.output if args.output is not None else f"{args.file}.tpm"
         table.save( outfile, use_names = args.use_names ) 
     else:
         parser.print_help()
