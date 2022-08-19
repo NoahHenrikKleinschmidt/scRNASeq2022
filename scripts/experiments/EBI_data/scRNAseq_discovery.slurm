@@ -36,6 +36,6 @@ fi
 
 # now run EcoTyper
 echo "Running EcoTyper..."
-config="${scripts}/experiments/scRNAseq_discovery.yml"
+config="${scripts}/experiments/EBI_data/scRNAseq_discovery.yml"
 Rscript $ecotyper/EcoTyper_discovery_scRNA.R -c "${config}"
 
