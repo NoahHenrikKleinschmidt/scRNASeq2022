@@ -6,7 +6,7 @@
 
 default :
     Input :    
-        Discovery dataset name : "our_own_disc_2"
+        Discovery dataset name : "hepato_to_stellate_run1_3"
 
         Expression matrix : "/data/users/noahkleinschmidt/EcoTyper/data/scRNA/merged_seurat/ecotyper_friendly/merged.seurat.rds.counts.tsv.tpm"    
         
@@ -15,12 +15,12 @@ default :
         # - "Sample" column 
         # - "CellType" column 
         # (all must be named like that...)
-        Annotation file : "/data/users/noahkleinschmidt/EcoTyper/data/scRNA/merged_seurat/ecotyper_friendly/merged.seurat.rds.metadata.tsv.annotation" 
+        Annotation file : "/data/users/noahkleinschmidt/EcoTyper/data/scRNA/merged_seurat/ecotyper_friendly/hepatoblasts.to.stellate.annotation.tsv" 
         Annotation file column to scale by : NULL
-        Annotation file column(s) to plot : [ "cluster_main_ctype" ]
+        Annotation file column(s) to plot : []
 
     Output :
-        Output folder : "/data/users/noahkleinschmidt/EcoTyper/results/our_own_disc_2"
+        Output folder : "/data/users/noahkleinschmidt/EcoTyper/results/hepato_to_stellate_run3"
 
     Pipeline settings :
         Pipeline steps to skip : [] 

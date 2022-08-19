@@ -6,21 +6,21 @@
 
 default :
     Input :    
-        Discovery dataset name : "our_own_disc_2"
+        Discovery dataset name : "drop_hepato_run3_30"
 
-        Expression matrix : "/data/users/noahkleinschmidt/EcoTyper/data/scRNA/merged_seurat/ecotyper_friendly/merged.seurat.rds.counts.tsv.tpm"    
+        Expression matrix : "/data/users/noahkleinschmidt/EcoTyper/data/scRNA/merged_seurat/ecotyper_friendly/drop_hepato.tsv.tpm"    
         
         # needs an 
         # - "ID" column (must be same as the columns in the expression matrix)
         # - "Sample" column 
         # - "CellType" column 
         # (all must be named like that...)
-        Annotation file : "/data/users/noahkleinschmidt/EcoTyper/data/scRNA/merged_seurat/ecotyper_friendly/merged.seurat.rds.metadata.tsv.annotation" 
+        Annotation file : "/data/users/noahkleinschmidt/EcoTyper/data/scRNA/merged_seurat/ecotyper_friendly/drop_hepato.annotation.tsv" 
         Annotation file column to scale by : NULL
         Annotation file column(s) to plot : [ "cluster_main_ctype" ]
 
     Output :
-        Output folder : "/data/users/noahkleinschmidt/EcoTyper/results/our_own_disc_2"
+        Output folder : "/data/users/noahkleinschmidt/EcoTyper/results/drop_hepato_run3_30"
 
     Pipeline settings :
         Pipeline steps to skip : [] 
@@ -28,7 +28,7 @@ default :
         Number of threads : 30
 
         # for publication use we need 50+ restarts!
-        Number of NMF restarts : 5
+        Number of NMF restarts : 30
         Maximum number of states per cell type : 20
 
         # the fine-graining of cluster identification.
