@@ -2,3 +2,4 @@ scripts/sides/mtx_to_tsv_performance/counts.mtx
 scripts/sides/tpm_handler_performance/samples_all.countTable.TPM.gnames_sum_dup
 scripts/sides/mtx_to_tsv_performance/counts.mtx_cols
 scripts/sides/mtx_to_tsv_performance/counts.mtx_rows
+scripts/experiments/our_data/our_bulk.out
