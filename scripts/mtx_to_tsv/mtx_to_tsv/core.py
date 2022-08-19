@@ -31,41 +31,6 @@ def read( filename: str ):
 
 
 
-def add_names( data : pd.DataFrame, filename : str ):
-    """
-    Adds column and row names to a dataframe.
-
-    Parameters
-    ----------
-    data : pandas.DataFrame
-        The dataframe to add names to.
-    filename : str
-        The name of the mtx file.
-
-    Returns
-    -------
-    pandas.DataFrame
-        The dataframe with names.
-    """
-    cols = pd.read_csv( 
-                            filename.replace( ".mtx", ".mtx_cols" ), 
-                            sep = "\t", header = None, names = ["name"] 
-                        )
-    rows = pd.read_csv( 
-                        filename.replace( ".mtx", ".mtx_rows" ), 
-                        sep = "\t", header = None, names = ["orig", "name"] 
-                    )
-    
-    # now ensure that the names are in the proper format so EcoTyper won't cry around...
-    for old, new in formatters.items():
-        cols.name = cols.name.str.replace( old, new )
-        rows.name = rows.name.str.replace( old, new )
-
-    data.columns = cols.name
-    data.index = rows.name
-
-    return data
-
 def write( data : pd.DataFrame, filename : str ):
     """
     Writes a dataframe to a tsv file.

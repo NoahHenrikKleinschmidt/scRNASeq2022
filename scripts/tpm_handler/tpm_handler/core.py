@@ -33,7 +33,7 @@ def call_gtftools( filename : str, output : str,  mode : str = "l" ):
     subprocess.call( cmd, shell = True )
 
 
-def add_gtf_gene_names( filename : str, outfile : str, swap_ids_and_names : bool = False ):
+def add_gtf_gene_names( filename : str, outfile : str, swap_ids_and_names : bool = False, **kwargs ):
     """
     Adds the gene names to the GTF file.
 
@@ -49,7 +49,8 @@ def add_gtf_gene_names( filename : str, outfile : str, swap_ids_and_names : bool
         will be swapped so that names are the 1st column and IDs are the 2nd column.
     """
     orig = pd.read_csv( filename, sep = "\t", header = None, comment = "#", names = ["chr", "source", "type", "start", "end", "score", "strand", "phase", "attributes"] )
-    dest = pd.read_csv( outfile, sep = "\t" )
+    sep = kwargs.get( "sep", "\t" )
+    dest = pd.read_csv( outfile, sep = sep )
 
     # now extract the gene names using regex and add as a data column...
     pattern = re.compile( 'gene_name "([A-Za-z0-9-.]+)"' )
@@ -74,7 +75,7 @@ def add_gtf_gene_names( filename : str, outfile : str, swap_ids_and_names : bool
     del cols[-1]
     dest = dest[ cols ]
 
-    dest.to_csv( outfile, sep = "\t", index = False )
+    dest.to_csv( outfile, sep = sep, index = False )
     
 
 def _match_regex_pattern( pattern : str, df : pd.DataFrame ):
