@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: eco-validate
+Version: 0.0.1
+Summary: A small package to summarize and test multiple re-runs of the EcoTyper framework.
+Home-page: https://github.com/NoahHenrikKleinschmidt/scRNASeq2022
+Author: Noah H. Kleinschmidt
+Author-email: noah.kleinschmidt@students.unibe.ch
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+A small package to summarize and test multiple re-runs of the EcoTyper framework.
+

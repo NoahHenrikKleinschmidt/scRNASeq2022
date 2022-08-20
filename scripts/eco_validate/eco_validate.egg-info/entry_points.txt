@@ -1,0 +1,4 @@
+[console_scripts]
+eco_validate = eco_validate.cli:main
+ecovalidate = eco_validate.cli:main
+
