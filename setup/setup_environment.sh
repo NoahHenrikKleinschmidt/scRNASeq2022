@@ -40,4 +40,5 @@ conda install pip
 pip install -r python_requirements.txt
 
 # now install supplementary packages for making data handling easier
-pip install ../scripts/tpm_handler
+pip install git+https://github.com/NoahHenrikKleinschmidt/eco_helper
+pip install git+https://github.com/NoahHenrikKleinschmidt/filerecords
