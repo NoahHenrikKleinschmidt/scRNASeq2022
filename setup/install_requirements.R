@@ -1,6 +1,8 @@
 # This script will install the required packages
 # as specified on the EcoTyper GitHub page.
 
+chooseCRANmirror( ind = 41 )
+
 if (!require("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 
@@ -37,5 +39,4 @@ packages = c(
                 "HiClimR"
             )
 
-chooseCRANmirror( ind = 41 )
 install.packages( packages ) 
