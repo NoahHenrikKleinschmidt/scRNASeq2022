@@ -44,5 +44,6 @@ pip install -r python_requirements.txt
 # now install supplementary packages for making data handling easier
 pip install git+https://github.com/NoahHenrikKleinschmidt/eco_helper
 pip install git+https://github.com/NoahHenrikKleinschmidt/filerecords
+pip install ../scripts/eco_validate/
 
 echo "Finished creation of $name"
