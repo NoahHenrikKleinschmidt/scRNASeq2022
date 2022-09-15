@@ -6,7 +6,7 @@
 
 default :
     Input :    
-        Discovery dataset name : "drop_hepato_run3_30"
+        Discovery dataset name : "drop_hepato_run3_50"
 
         Expression matrix : "/data/users/noahkleinschmidt/EcoTyper/data/scRNA/merged_seurat/ecotyper_friendly/drop_hepato.tsv.tpm"    
         
@@ -20,12 +20,12 @@ default :
         Annotation file column(s) to plot : [ "cluster_main_ctype" ]
 
     Output :
-        Output folder : "/data/users/noahkleinschmidt/EcoTyper/results/drop_hepato_run3_30"
+        Output folder : "/data/users/noahkleinschmidt/EcoTyper/results/drop_hepato_run3_50"
 
     Pipeline settings :
         Pipeline steps to skip : [] 
         Filter non cell type specific genes : True
-        Number of threads : 30
+        Number of threads : 40
 
         # for publication use we need 50+ restarts!
         Number of NMF restarts : 30

@@ -6,7 +6,7 @@
 
 default :
     Input :    
-        Discovery dataset name : "our_own_disc_2"
+        Discovery dataset name : "all_celltypes_30"
 
         Expression matrix : "/data/users/noahkleinschmidt/EcoTyper/data/scRNA/merged_seurat/ecotyper_friendly/merged.seurat.rds.counts.tsv.tpm"    
         
@@ -20,7 +20,7 @@ default :
         Annotation file column(s) to plot : [ "cluster_main_ctype" ]
 
     Output :
-        Output folder : "/data/users/noahkleinschmidt/EcoTyper/results/our_own_disc_2"
+        Output folder : "/data/users/noahkleinschmidt/EcoTyper/results/all_celltypes_30"
 
     Pipeline settings :
         Pipeline steps to skip : [] 
@@ -28,7 +28,7 @@ default :
         Number of threads : 30
 
         # for publication use we need 50+ restarts!
-        Number of NMF restarts : 5
+        Number of NMF restarts : 30
         Maximum number of states per cell type : 20
 
         # the fine-graining of cluster identification.
