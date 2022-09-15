@@ -4,3 +4,4 @@ scripts/sides/mtx_to_tsv_performance/counts.mtx_cols
 scripts/sides/mtx_to_tsv_performance/counts.mtx_rows
 *.out
 *.err
+.registry
