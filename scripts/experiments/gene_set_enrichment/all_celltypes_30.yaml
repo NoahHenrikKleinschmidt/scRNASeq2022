@@ -1,0 +1,277 @@
+# ----------------------------------------------------------------
+#   Main directory settings for input and output data
+# ----------------------------------------------------------------
+directories :
+
+  # available wildcards for filepaths are:
+  # - {user}    | the current username
+  # - {parent}  | the project parent directory
+  # - {results} | the project's raw results directory
+  # - {scripts} | the project's scripts directory ( is {parent}/scripts )
+
+  # the ecotyper results directory for which to perform or load results of
+  # enrichment analysis.
+  ecotyper_dir : "{results}/all_celltypes_30"
+  
+  # the directory where outputs (e.g. figures) 
+  # from within the notebook should be saved
+  outdir : "{parent}/gsea_results/all_celltypes_30"
+
+  # the project directory
+  parent : "/data/users/{user}/EcoTyper"
+
+  # the directory of EcoTyper raw results
+  results : "{parent}/results"
+
+  # the directory where the enrichment results from GSEAPY
+  # should be saved and later loaded from in the notebook.
+  # NOTE: The actual directory will be a `ecotyper_dir` 
+  #       subdirectory within this directory.
+  enrichment_results : "{parent}/gsea_enrichment"
+
+
+# ----------------------------------------------------------------
+#   Enrichment analysis settings
+# ----------------------------------------------------------------
+enrichment :
+
+  # enrichment is automatically performed when no 
+  # enrichment results are found. If set to True then
+  # re-computation of enrichment is forced even 
+  # when results are present already.
+  perform_enrichment : False
+
+  # if True only ecotype-contributing cell states are analysed
+  # and results are stored in ecotype-specific subdirectories.
+  # Otherwise all cell states are analysed and stored in cell-type 
+  # specific files.
+  ecotype_resolution : True
+
+  # perform GSEAPY enrichr
+  enrichr : True
+
+  # perform GSEAPY prerank
+  prerank : False
+
+  # the reference gene sets against which to query.
+  # this can be any input type accepted by GSEAPY
+  gene_sets : 
+    - "Reactome_2016"
+    - "WikiPathway_2021_Human"
+    - "Panther_2016"
+    - "KEGG_2021_Human"
+    - "GO_Biological_Process_2021"
+    - "GO_Molecular_Function_2021"
+    - "GO_Cellular_Component_2021"
+
+# ----------------------------------------------------------------
+#   Results analysis settings for automated gene set hihglighting
+# ----------------------------------------------------------------
+analysis : 
+
+  # the topmost fraction of enriched terms to use for determining 
+  # if a category might be interesting (i.e. wheter or not 
+  # to keep it for a speific cell-state).
+  top_most_fraction :  0.1
+
+  # the minimum number of hits of a category among the topmost enriched terms 
+  # required to keep a category for a specific cell-state.
+  cutoff : 5
+
+  # provide a dictionary of reference categories / super-terms
+  # which to query within the enrichment datasets in each cell-state.
+  # or set to NULL to disable.
+  references : 
+
+    "lipid associated" : 
+      - "lipid"
+      - "lipo(protein)?"
+      - "triacyl"
+      - "lipase"
+      - "acylglycer"
+      - "triglycer"
+      - "chylomicron"
+      - "fat"
+      - "fatty ?-?_?acid"
+      - "L( |_|-)?DL"
+      - "H( |_|-)?DL"
+      - "V( |_|-)?LDL" 
+      - "PPAR"
+
+    "steroid / cholesterol" : 
+      - "steroid"
+      - "cholesterol"
+
+    "sugar associated" :
+      - "ose"
+      - "glyco"
+      - "sugar"
+      - "amyl"
+
+    "GPCR related" :
+      - "GPCR"
+      - "G ?-?_?protein"
+
+    "heat associated" :
+      - "thermo"
+      - "heat"
+      - "thermal"
+      - "heat( |-|_)shock"
+      - "HS(F|P)"
+
+    "VEGF associated" :
+      - "VEGF"
+      - "vascular( |-|_)?endothelial( |-|_)?growth" 
+
+    "protein (mis-)folding related (including chaperones)" :
+      - "unfolded( |-|_)?protein"
+      - "chaperon(e|in)"
+      - "incorrect protein"
+      - "protein( |-|_)?folding"
+      - "misfold(ing)?"
+
+    "cytokine / chemokine related" :
+      - "cytokine"
+      - "chemokine"
+
+    "DNA damage" :
+      - "DNA( |-|_)?damage"
+      - "break"
+
+    "Interleukin" :
+      - "interleukin"
+      - "IL-"
+
+    "Interferon" :
+      - "interferon"
+      - "IFN"
+
+    "MAPK" :
+      - "MAPK"
+
+    "Apoptosis" :
+      - "apopto"
+      
+    "Stress response" :
+      - "response to stress"
+      - "stress( |-|_)?response"
+      
+    "blood related" : 
+      - "blood"
+      - "vascular"
+      - "vaso"
+      - "angio"
+
+    "Oxphos / TCA" :
+      - "NADH"
+      - "oxidative ?-?phospho"
+      - "respiratory ?-?chain"
+      - "oxphos"
+      - "electron ?-?_?transport"
+      - "electron ?-?_?transport ?-?_?chain"
+      - "TCA"
+      - "citric ?-?acid ?-?cycle"
+      - "krebs ?-?cycle"
+      - "cytochrome"
+      - "mitochondrial ?-?(inner)? ?-?membrane"
+      - "proton transmembrane"
+      - "Complex-? ?(I|II|III|IV|V)"
+      - "oxidoreduction"
+
+    "Gap junctions" :
+      - "gap ?-?junction"
+
+    "Membrane associated" :
+      - "membrane"
+
+    "Rap1" :
+      - "rap1"
+
+    "PI3K / mTOR (and feeding pathways)" : 
+      - "PI3K"
+      - "akt"
+      - "mtor"
+      - "IGF1R"
+
+    "Cell surface" :
+      - "cell ?-?surface"
+      - "cell ?-?periphery"
+      - "cell ?-?membrane"
+      - "cell ?-?junction"
+      - "plasma ?-?membrane"
+      - "integrin"
+      - "adhesion"
+      - "cell-cell"
+      - "cadherin" 
+
+    "cell structures" :
+      - "actin"
+      - "fibr"
+      - "cyto ?-?skelet"
+      - "envel"
+      - "tubulin"
+
+    "(transmembrane) transport" :
+      - "transmembrane"
+      - "transmembrane ?-?transport"
+      - "transporter"
+      - "channel"
+
+    "cell cycle" :
+      - "cyclin"
+      - "CDK"
+      - "cell ?-?cycle"
+
+    "immunity / complement / inflammation" :
+      - "immune response"
+      - "immune"
+      - "immunity"
+      - "inflamma"
+      - "complement"
+      - "B-? ?cell"
+      - "T-? ?cell"
+      - "lymphocyte"
+      - "lymph(atic|oid) cell"
+    
+    "inclusion bodies" : 
+      - "inclusion( |-|_)?bod(y|ies)"
+
+    "translation" :
+      - "translation"
+      - "rRNA"
+      - "ribosom"
+      - "peptide chain"
+      - "elongation"
+      - "initiation"
+      - "termination"
+      
+    "RNA metabolism" :
+      - "m?RNA"
+      - "transcription"
+      - "NMD"
+      - "nonsense ?-?mediated"
+
+    "amino acids" : 
+      - "valine"
+      - "leucine"
+      - "isoleucine"
+      - "methionine"
+      - "glutamine"
+      - "glutamate"
+      - "asparagine"
+      - "aspartate"
+      - "proline"
+      - "lysine"
+      - "tryptophane"
+      - "tyrosine"
+      - "arginine"
+      - "histidine"
+      - "serine"
+      - "glycine"
+      - "alanine"
+      - "threonine"
+      - "cysteine"
+      - "phenylalanine"
+      - "amino-?_?acid" 
+
+  
