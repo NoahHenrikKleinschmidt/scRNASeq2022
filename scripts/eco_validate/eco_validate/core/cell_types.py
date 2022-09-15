@@ -3,6 +3,7 @@ This class handles cell type sub-datasets from EcoTyper.
 """
 
 import os
+import eco_validate.core.settings as settings
 
 class CellTypeCollection:
     """
@@ -31,8 +32,8 @@ class CellTypeCollection:
         """
         cell_types = [ i for i in os.listdir( directory ) if os.path.isdir( os.path.join( directory, i ) ) ]
         
-        if "Ecotypes" in cell_types: 
-            cell_types.remove( "Ecotypes" )
+        if settings.ecotypes_folder in cell_types: 
+            cell_types.remove( settings.ecotypes_folder )
 
         for cell_type in cell_types:
             if cell_type not in self.cell_types:

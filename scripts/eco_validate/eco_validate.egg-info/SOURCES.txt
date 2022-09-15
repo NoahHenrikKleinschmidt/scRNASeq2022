@@ -8,11 +8,17 @@ eco_validate.egg-info/dependency_links.txt
 eco_validate.egg-info/entry_points.txt
 eco_validate.egg-info/top_level.txt
 eco_validate/core/__init__.py
+eco_validate/core/cell_states.py
 eco_validate/core/cell_types.py
 eco_validate/core/ecotyper_config.py
+eco_validate/core/ecotypes.py
 eco_validate/core/find.py
+eco_validate/core/gene_sets.py
 eco_validate/core/graphical.py
+eco_validate/core/settings.py
 eco_validate/summarize/__init__.py
 eco_validate/summarize/cell_states.py
 eco_validate/summarize/cli.py
+eco_validate/summarize/ecotypes.py
+eco_validate/summarize/gene_sets.py
 eco_validate/summarize/ranks.py

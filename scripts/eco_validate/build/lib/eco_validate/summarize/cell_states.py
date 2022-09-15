@@ -5,6 +5,7 @@ Summarize the cell state assignments accross runs.
 import logging
 import os
 import pandas as pd
+import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 
@@ -34,7 +35,7 @@ def main( directories : list, outdir : str, config : str = None, **kwargs ):
 
     kwargs["suptitle"] = kwargs.pop("suptitle", suptitle )
 
-    data = CellStateCollection( directories )
+    data = core.CellStateCollection( directories )
 
     scatterfile = None
     heatmapfile = None
@@ -46,82 +47,10 @@ def main( directories : list, outdir : str, config : str = None, **kwargs ):
     scatterplot( data, filename = scatterfile, **kwargs )
     heatmap( data, filename = heatmapfile, **kwargs )
     
+    if outdir:
+        print( f"Saving outputs to {outdir}" )
 
-class CellStateCollection( core.CellTypeCollection ):
-    """
-    This class handles the state assignments between runs.
-
-    Parameters
-    ----------
-    directories : list
-        List of EcoTyper results (output) directories to get state assignments from.
-    """
-    def __init__( self, directories : list ):
-        super().__init__( directories )
-        self.state_assignments = {}
-
-        for cell_type, dirs in self.cell_types.items() :
-            self._find_state_assignments( cell_type, dirs ) 
-    
-    def save( self, directory : str ):
-        """
-        Save the state assignments of each cell type to a directory (one file per cell type).
-        
-        Parameters
-        ----------
-        directory : str
-            The directory to save the state assignments to.
-        """
-        for cell_type, df in self.state_assignments.items():
-            df.to_csv( os.path.join( directory, cell_type + "_state_assignment.txt"), sep = "\t" )
-
-    def _find_state_assignments( self, cell_type : str, dirs : list ):
-        """
-        Find the state assignments from a single cell type from multiple EcoTyper results directories.
-        
-        Parameters
-        ----------
-        cell_type : str
-            The cell type to find state assignments for.
-        dirs : list
-            The EcoTyper results directories to get state assignments from.
-        """
-        state_assignments = pd.DataFrame()
-
-        for dir in dirs:
-            
-
-            name = core.find_files( dir, "state_assignment.txt" )
-            if not name:
-                logging.warning( f"No state assignment file found in {dir}" )
-                continue
-            
-            df = pd.read_csv( name[0], sep = "\t", index_col = 1 )
-
-            name = os.path.basename( os.path.dirname( dir ) )
-            state_assignments[ name ] = df[ "State" ]
-       
-        self.state_assignments[ cell_type ] = state_assignments
-    
-    def __iter__( self ):
-        """
-        Iterate over the cell type state_assignments.
-        """
-        return iter( self.state_assignments )
-
-    def __getitem__( self, key ):
-        """
-        Get the cell type state_assignments.
-        """
-        return self.state_assignments[key]
-
-    def __len__( self ):
-        """
-        Get the number of cell types.
-        """
-        return len( self.state_assignments )
-
-def scatterplot( data : (CellStateCollection or pd.DataFrame), show_sample_labels : bool = False, filename: str = None, **kwargs ):
+def scatterplot( data : (core.CellStateCollection or pd.DataFrame), show_sample_labels : bool = False, filename: str = None, **kwargs ):
     """
     Create a scatterplot of the state assignments per sample and run.
     
@@ -155,12 +84,21 @@ def scatterplot( data : (CellStateCollection or pd.DataFrame), show_sample_label
         
         for col in data.columns:
             
-            ax.scatter( x = data.index.astype("category"), 
-                        y = data[col].astype("category"), 
-                        label = col,
-                        alpha = alpha,
-                        linewidth = 0,
-                        **kwargs )
+            try:
+
+                # in case we have a NaN in there we convert that to string
+                _col = data[col].astype(str).astype("category")
+
+                ax.scatter( x = data.index.astype("category"), 
+                            y = _col, 
+                            label = col,
+                            alpha = alpha,
+                            linewidth = 0,
+                            **kwargs )
+
+            except Exception as e:
+                logging.warning( f"Could not plot {col} : {e}" )
+                continue
 
         if not show_sample_labels:
             ax.set( xticklabels = [], xticks = [] )
@@ -173,7 +111,7 @@ def scatterplot( data : (CellStateCollection or pd.DataFrame), show_sample_label
             plt.savefig( filename )
             plt.close()
 
-    elif isinstance( data, CellStateCollection ):
+    elif isinstance( data, core.CellStateCollection ):
         
         ncols, nrows = graphical.make_layout_from_list( data.cell_types.keys() )
         fig, axs = plt.subplots( nrows, ncols, figsize = kwargs.pop("figsize", (10,10)), dpi = kwargs.pop("dpi", 300) )
@@ -188,7 +126,7 @@ def scatterplot( data : (CellStateCollection or pd.DataFrame), show_sample_label
             plt.savefig( filename )
             plt.close()
 
-def heatmap( data : (CellStateCollection or pd.DataFrame), show_sample_labels : bool = False, filename : str = None, **kwargs ):
+def heatmap( data : (core.CellStateCollection or pd.DataFrame), show_sample_labels : bool = False, filename : str = None, **kwargs ):
     """
     Create a heatmap summary of the cell state assignments per run and celltype.
     """
@@ -212,8 +150,7 @@ def heatmap( data : (CellStateCollection or pd.DataFrame), show_sample_labels : 
         kwargs["cbar_kws"] = cbar_kws
 
         # a function to extract the numbers from the S01 state labels for heatmap plotting...
-        to_numbers = lambda x: int( x[-1] )
-        for i in data: data[i] = data[i].apply( to_numbers )
+        for i in data: data[i] = data[i].astype(str).apply( _to_numbers )
 
         sns.heatmap( data.transpose(), cmap = cmap, ax = ax, **kwargs )
 
@@ -232,7 +169,7 @@ def heatmap( data : (CellStateCollection or pd.DataFrame), show_sample_labels : 
             plt.savefig( filename )
             plt.close()
     
-    elif isinstance( data, CellStateCollection ):
+    elif isinstance( data, core.CellStateCollection ):
 
         ncols, nrows = graphical.make_layout_from_list( data.cell_types.keys() )
         fig, axs = plt.subplots( nrows, ncols, figsize = kwargs.pop("figsize", (10,10)), dpi = kwargs.pop("dpi", 300) )
@@ -240,9 +177,24 @@ def heatmap( data : (CellStateCollection or pd.DataFrame), show_sample_labels : 
         
         with alive_bar( len(data), title = "Generating heatmap" ) as bar:
             for cell_type, ax in zip( data.state_assignments, axs.reshape(axs.size) ):
-                heatmap( data[cell_type], show_sample_labels, ax = ax, title = cell_type, **kwargs )
-                bar()
+                
+                try:
+                    heatmap( data[cell_type], show_sample_labels, ax = ax, title = cell_type, **kwargs )
+                    bar()
+                except Exception as e:
+                    logging.warning( f"Could not plot {cell_type} : {e}" )
+                    continue
 
         if filename: 
             plt.savefig( filename )
             plt.close()
+
+def _to_numbers( x ):
+    """
+    A function to extract numbers from strings as S01, S02, S03, etc. -> 1,2,3, etc.
+    """
+    last = x[-1]
+    if last.isdigit():
+        return int(last)
+    else:
+        return np.nan
