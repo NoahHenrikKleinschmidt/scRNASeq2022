@@ -8,15 +8,18 @@
 #SBATCH --output=our_own_disc2.out
 
 # NOTE: It really requires A LOOOOT of memory! They state 50+ but at 100 I get a memory error. Now let's check at 200...
+# NOTE: This now uses the NEW ecotyper version they uploaded after my issues...
 
-# This script performs EcoTyper Ecotype Discovery on the scRNA-seq dataset (from EBI)
 
 conda activate EcoTyper
 
 parent="/data/users/${USER}/EcoTyper"
 data="${parent}/data/scRNA/merged_seurat"
 scripts="${parent}/scRNASeq2022/scripts"
-ecotyper="${parent}/ecotyper"
+ecotyper="${parent}/ecotyper_new"
+base_lib64="${parent}/ecotyper_new/lib64"
+
+LD_LIBRARY_PATH=$base_lib64
 
 cd $ecotyper
 

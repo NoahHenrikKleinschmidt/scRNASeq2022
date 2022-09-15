@@ -2,10 +2,10 @@
 
 #SBATCH --job-name="EcoTyp-scRNA-discovery"
 #SBATCH --nodes=1
-#SBATCH --cpus-per-task=30
+#SBATCH --cpus-per-task=40
 #SBATCH --mem=200G
 #SBATCH --time=80:00:00
-#SBATCH --output=drop_hepato_run2.out
+#SBATCH --output=drop_hepato_run3_50.out
 
 # NOTE: This script tests out merging the Hepatoblasts that failed at step 8 with the Hepatic stellate cells.
 #       This is a good way to test out the effect of the stellate cells on the results. 
