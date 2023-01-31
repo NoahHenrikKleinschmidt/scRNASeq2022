@@ -1,0 +1,46 @@
+# This is the config file for Experiment 01: discovery of cell states in scRNA-seq data
+#
+# Alrighty, currently this stuff is not yet working because the wilcoxon rank stuff just returns all NaN whatever...
+# why is another matter so let't test if we can use the default Carcinoma state to recover ecotypes in our
+# data to check if the problem is already in the datafiles...
+
+default:
+  Input:
+    Discovery dataset name: "v3_drop_cancer_stem_drop_cholangiocytes_no_normals"
+
+    # we keep using the v1 counts table since the counts did not change, only the annotation did...
+    Expression matrix: "/data/users/noahkleinschmidt/EcoTyper/data/scRNA/merged_seurat/ecotyper_friendly/drop_cancer_stem_drop_cholangiocytes_no_normals.expression.tsv"
+
+    # needs an
+    # - "ID" column (must be same as the columns in the expression matrix)
+    # - "Sample" column
+    # - "CellType" column
+    # (all must be named like that...)
+    Annotation file: "/data/users/noahkleinschmidt/EcoTyper/data/scRNA/merged_seurat/ecotyper_friendly/drop_cancer_stem_drop_cholangiocytes_no_normals.annotation.tsv"
+    Annotation file column to scale by: NULL
+    Annotation file column(s) to plot:
+      ["Sample", "cluster_main_ctype", "scGate_multi"]
+
+  Output:
+    Output folder: "/data/users/noahkleinschmidt/EcoTyper/results/v3_drop_cancer_stem_drop_cholangiocytes_no_normals"
+
+  Pipeline settings:
+    Pipeline steps to skip: []
+    Filter non cell type specific genes: True
+    Number of threads: 30
+
+    # for publication use we need 50+ restarts!
+    Number of NMF restarts: 30
+    Maximum number of states per cell type: 20
+
+    # the fine-graining of cluster identification.
+    # The lower this number the MORE clusters will be identified.
+    # essentially like a threshold for cluster sizes - can be anything in [0,1]
+    Cophenetic coefficient cutoff: 0.975
+
+    # the cutoff for similarity checking of identified states
+    # anything that is above the cutoff is considered insiginificant and set to 0
+    # using 1 disables the filter...
+    Jaccard matrix p-value cutoff: 1
+
+    Minimum number of states in ecotypes: 3

@@ -43,7 +43,7 @@ if [ ! -d "${outdir}" ]; then
 fi
 
 
-eco_helper enrich --enrichr --assemble --gene_sets $gene_sets --output "${outdir}/${directory}" "${results}/${directory}"
+eco_helper enrich --pickle --enrichr --assemble --gene_sets $gene_sets --output "${outdir}/${directory}" "${results}/${directory}"
 
 if [ ! $notebook_config == "" ]; then
     eco_helper enrich --notebook --notebook_config $notebook_config "${scripts}/${directory}_enrichment.ipynb"

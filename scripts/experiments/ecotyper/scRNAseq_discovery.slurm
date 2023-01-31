@@ -5,24 +5,26 @@
 #SBATCH --cpus-per-task=30
 #SBATCH --mem=200G
 #SBATCH --time=80:00:00
-#SBATCH --output=hepato_to_stellate_run2.out
+#SBATCH --output=ours_v3_5%j.out
 
-# NOTE: This script tests dropping the hepatoblasts entirely from the dataset. 
-#       And inspect the inpact on the outcome of EcoTyper results.
+# NOTE: It really requires A LOOOOT of memory! They state 50+ but at 100 I get a memory error. Now let's check at 200...
+# NOTE: This now uses the NEW ecotyper version they uploaded after my issues...
 
-# This script performs EcoTyper Ecotype Discovery on the scRNA-seq dataset.
 
 conda activate EcoTyper
 
 parent="/data/users/${USER}/EcoTyper"
 data="${parent}/data/scRNA/merged_seurat"
 scripts="${parent}/scRNASeq2022/scripts"
-ecotyper="${parent}/ecotyper"
+ecotyper="${parent}/ecotyper_new"
+base_lib64="${parent}/ecotyper_new/lib64"
+
+LD_LIBRARY_PATH=$base_lib64
 
 cd $ecotyper
 
 # load the config file for the experiment
-config="${scripts}/experiments/our_data/hepato_to_stellate.yml"
+config="${scripts}/experiments/our_data/scRNAseq_discovery_v3.yml"
 
 # now run EcoTyper
 echo "Running EcoTyper..."
